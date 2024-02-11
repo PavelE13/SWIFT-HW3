@@ -10,6 +10,14 @@ import UIKit
 
 final class PhotosViewController: UICollectionViewController {
     
+    private let networkService = NetworkService()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Photos"
+        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: Constants.Identifier.photoCellIdentifier)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
     }
